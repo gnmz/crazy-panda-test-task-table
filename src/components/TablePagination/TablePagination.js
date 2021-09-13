@@ -27,14 +27,22 @@ const TablePagination = ({ currentPage, pageSize, data, getCurrentPage }) => {
 
   return (
     <div className="table-pagination">
-      <button onClick={prevPage} disabled={currentPage === 1}>
+      <button onClick={prevPage} disabled={currentPage === 1} className="pagination-btn">
         &laquo;
       </button>
 
       {pages.map((item, index) => (
-        <button key={index} onClick={()=>getCurrentPage(item)}>{item}</button>
+        <button
+          className={
+            currentPage === item ? "pagination-active-btn" : "pagination-btn"
+          }
+          key={index}
+          onClick={() => getCurrentPage(item)}
+        >
+          {item}
+        </button>
       ))}
-      <button onClick={nextPage} disabled={currentPage === pagesCount}>
+      <button onClick={nextPage} disabled={currentPage === pagesCount} className="pagination-btn">
         &raquo;
       </button>
     </div>

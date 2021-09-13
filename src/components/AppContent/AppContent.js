@@ -15,7 +15,11 @@ const AppContent = ({ data, searchData, searchedData, isSearched }) => {
 
   return (
     <div className="app-content">
-      <TableSearch searchData={searchData} data={data} />
+      <TableSearch
+        searchData={searchData}
+        data={data}
+        getCurrentPage={getCurrentPage}
+      />
       {searchedData.length === 0 && isSearched ? (
         <div>Ничего не найдено</div>
       ) : (
@@ -25,16 +29,18 @@ const AppContent = ({ data, searchData, searchedData, isSearched }) => {
           pageSize={pageSize}
         />
       )}
-      <TablePagination
-        data={
-          searchedData.length > 0 || (searchedData.length === 0 && isSearched)
-            ? searchedData
-            : data
-        }
-        currentPage={currentPage}
-        pageSize={pageSize}
-        getCurrentPage={getCurrentPage}
-      />
+      {searchedData.length === 0 && isSearched ? null : (
+        <TablePagination
+          data={
+            searchedData.length > 0 || (searchedData.length === 0 && isSearched)
+              ? searchedData
+              : data
+          }
+          currentPage={currentPage}
+          pageSize={pageSize}
+          getCurrentPage={getCurrentPage}
+        />
+      )}
     </div>
   );
 };
