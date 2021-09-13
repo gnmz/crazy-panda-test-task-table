@@ -3,6 +3,6 @@
   text-align: center;
 }
 
-/* th {
-  width: 40px;
-} */
+th span {
+  margin-left: 2px;
+}
