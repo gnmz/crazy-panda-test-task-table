@@ -6,7 +6,7 @@ const Table = ({ data, currentPage, pageSize }) => {
   const renderHeaders = (arr) => {
     if (arr.length > 0) {
       return Object.keys(arr[0]).map((item, index) => (
-        <th key={index} style={{ textTransform: "capitalize" }}>
+        <th scope="col" key={index} style={{ textTransform: "capitalize" }}>
           {item.toLowerCase()}
         </th>
       ));
@@ -14,13 +14,13 @@ const Table = ({ data, currentPage, pageSize }) => {
   };
 
   const renderRows = (rowItem) => {
-    return Object.entries(rowItem).map(([, cell], index) => (
-      <td key={index}>{cell}</td>
+    return Object.entries(rowItem).map(([id, cell], index) => (
+      <td key={index} className={`table-item-${id}`}>{cell}</td>
     ));
   };
 
   return (
-    <table>
+    <table className="table table-hover">
       <thead>
         <tr>{renderHeaders(data)}</tr>
       </thead>

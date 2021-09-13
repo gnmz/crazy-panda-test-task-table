@@ -1,6 +1,6 @@
 .table-search {
   width: 300px;
-  margin: 20px;
+  margin: 20px 0;
   border: 1px solid #2c2d34;
   padding: 10px;
   display: flex;
@@ -22,13 +22,11 @@
 
 .remove-search-value-btn {
   width: 20px;
-  height: 20px;
   background-color: #fff;
   color: gray;
   padding: 2px;
   outline: none;
-  border: 1px solid gray;
-  border-radius: 50%;
+  border: none;
   cursor: pointer;
 }
 

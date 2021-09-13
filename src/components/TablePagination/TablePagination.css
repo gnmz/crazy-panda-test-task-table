@@ -1,27 +1,27 @@
 .table-pagination {
   display: flex;
   justify-content: right;
-  margin: 0 20px;
+  margin: 20px;
 }
 
 .pagination-btn {
-  width: 20px;
-  height: 20px;
+  width: 30px;
   background-color: #fff;
   margin: 0 1px;
   cursor: pointer;
   border: 1px solid gray;
   color: gray;
+  outline: none;
 }
 
 .pagination-active-btn {
-  width: 20px;
-  height: 20px;
+  width: 30px;
   margin: 0 1px;
   border: 1px solid gray;
   background-color: #4550a9;
   color: #fff;
   font-weight: 900;
+  outline: none;
 }
 
 .pagination-btn:hover {
@@ -32,6 +32,12 @@
 .pagination-btn:active {
   position: relative;
   top: 2px;
+  outline: none;
+}
+
+.pagination-active-btn:active,
+.pagination-active-btn:focus {
+  outline: none;
 }
 
 .pagination-btn:disabled {
