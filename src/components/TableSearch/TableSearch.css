@@ -3,6 +3,10 @@
   margin: 20px;
   border: 1px solid #2c2d34;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .table-search-icon {
@@ -13,5 +17,22 @@
   border: none;
   outline: none;
   font-size: 16px;
-  width: 85%;
+  width: 80%;
+}
+
+.remove-search-value-btn {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: gray;
+  padding: 2px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.remove-search-value-btn:hover {
+  color: red;
+  border-color: red;
 }

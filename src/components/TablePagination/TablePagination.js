@@ -5,8 +5,7 @@ import "./TablePagination.css";
 const TablePagination = ({ currentPage, pageSize, data, getCurrentPage }) => {
   const [pages, setPages] = useState([]);
 
-  const pagesCount = data.length / pageSize;
-
+  const pagesCount = Math.ceil(data.length / pageSize);
   useEffect(() => {
     const createPages = () => {
       let pages = [];

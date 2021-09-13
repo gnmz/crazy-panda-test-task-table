@@ -11,6 +11,7 @@ const App = () => {
   const [searchedData, setSearchedData] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [isSearched, setIsSearched] = useState(false)
 
   useEffect(() => {
     const fetchData = () => {
@@ -32,8 +33,9 @@ const App = () => {
     fetchData();
   }, []);
 
-  const searchData = (item) => {
+  const searchData = (item, isSearch) => {
     setSearchedData(item)
+    setIsSearched(isSearch)
   }
 
   if (loading) {
@@ -47,7 +49,7 @@ const App = () => {
   return (
     <div className="app">
       <AppHeader />
-      <AppContent data={data} searchedData={searchedData} searchData={searchData} />
+      <AppContent data={data} searchedData={searchedData} searchData={searchData} isSearched={isSearched} />
     </div>
   );
 };
