@@ -12,7 +12,7 @@ const Table = ({ data, currentPage, pageSize }) => {
         <th
           scope="col"
           key={index}
-          style={{ textTransform: "capitalize" }}
+          className="th-cell"
           onClick={() => sortHandler(item, sortDirection)}
         >
           {item.toLowerCase()}
@@ -37,7 +37,6 @@ const Table = ({ data, currentPage, pageSize }) => {
 
   const sortHandler = (col, sortDirection) => {
     setSortCol(col);
-    if (data.length === 0) return data;
     if (typeof data[0][col] === "string") {
       if (sortDirection === "asc") {
         setSortDirection("desc");
@@ -53,11 +52,9 @@ const Table = ({ data, currentPage, pageSize }) => {
     } else if (typeof data[0][col] === "number") {
       if (sortDirection === "asc") {
         setSortDirection("desc");
-
         return data.sort((a, b) => a[col] - b[col]);
       } else {
         setSortDirection("asc");
-
         return data.sort((a, b) => b[col] - a[col]);
       }
     }

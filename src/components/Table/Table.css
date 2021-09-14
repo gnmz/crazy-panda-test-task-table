@@ -6,3 +6,8 @@
 th span {
   margin-left: 2px;
 }
+
+.th-cell {
+  text-transform: capitalize;
+  cursor: pointer;
+}
